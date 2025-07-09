@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import Inicio from '../pages/Inicio';
 import Usuarios from '../pages/Usuario';
@@ -16,7 +16,7 @@ import GestionarExterno from '../pages/Organizacion/GestionarExterno'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/Credenciales/" element={<Layout />}>
           <Route index element={<Navigate to="/Credenciales/Inicio" />} />
@@ -32,7 +32,7 @@ const App = () => {
           <Route path="Organización/Gestionar_Externo" element={<GestionarExterno/>}/> 
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
