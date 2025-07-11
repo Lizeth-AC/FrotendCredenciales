@@ -21,13 +21,13 @@ function App() {
   }, []);
 
   const fetchSubscribers = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/suscribers`);
+    const response = await axios.get('http://127.0.0.1:8000/api/suscribers');
     setSubscribers(response.data);
   }
 
   const handleSumit = async (e) => {
     e.preventDefault();
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/suscribers`,{name, email});
+    const response = await axios.post('http://127.0.0.1:8000/api/suscribers',{name, email});
     setSubscribers([...subcribers, response.data]);
   }
   return(
