@@ -16,7 +16,6 @@ const registerValidation = Yup.object({
   .test("fileType", "Solo se permiten archivos de imagen", (value) => {
     return value && value.type.startsWith("image/");
   })
-
 });
 
 export default registerValidation;
