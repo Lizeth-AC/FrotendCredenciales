@@ -87,7 +87,7 @@ const CustomFormRegister = () => {
       formData.append("celular", values.numeroCelular);
       formData.append("id_cargo", values.cargos);
       formData.append("token", values.codVerificacion);
-      formData.append("id_recinto", recintoSeleccionado?.value);
+      formData.append("id_recinto", values.cargos === 3 ? recintoSeleccionado?.value || "" : "");
       formData.append("estado", 0);
       formData.append("accesoComputo", 0);
       if (values.imagen) formData.append("photo", values.imagen);
@@ -138,8 +138,14 @@ const CustomFormRegister = () => {
       >
         {({ isValid, dirty, values }) => (
           <Form>
-            <Grid container direction="row" justifyContent="space-between">
-              <Grid container spacing={0.5} direction="column" width="55%">
+            <Grid
+              container
+              spacing={2}
+              direction={{ xs: "column", md: "row" }}
+              justifyContent="space-between"
+            >
+
+              <Grid container spacing={0.5} direction="column" sx={{ width: { xs: "100%", md: "55%" } }}>
                 <SeccionCargoFields
                   seccionOptions={seccionOptions}
                   cargoOptions={cargoOptions}
@@ -156,9 +162,16 @@ const CustomFormRegister = () => {
                 )}
               </Grid>
 
-              <Box sx={{ backgroundColor: "primary.main", width: "0.5px" }} />
+              <Box
+                sx={{
+                  backgroundColor: "primary.main",
+                  width: "0.5px",
+                  display: { xs: "none", md: "block" },
+                }}
+              />
 
-              <Grid container spacing={0.5} direction="column" width="40%">
+
+              <Grid container spacing={0.5} direction="column" sx={{ width: { xs: "100%", md: "40%" } }}>
                 <SeccionUploadImage />
 
                 <Grid item xs={12} marginTop="10%" ml="40%">
