@@ -15,9 +15,6 @@ const registerValidation = Yup.object({
   .required("Campo obligatorio")
   .test("fileType", "Solo se permiten archivos JPG o JPEG", (value) => {
     return value && ["image/jpeg", "image/jpg"].includes(value.type);
-  })
-  .test("fileSize", "El archivo no debe superar los 2MB", (value) => {
-    return value && value.size <= 2 * 1024 * 1024;
   }),
 
 });
