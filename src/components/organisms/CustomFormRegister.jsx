@@ -102,7 +102,6 @@ const CustomFormRegister = () => {
         showSnackbar("¡Registro exitoso!", "success");
         resetForm();
       } else {
-        console.error(result);
         showSnackbar("Error al guardar", "error");
       }
     } catch (e) {
@@ -139,8 +138,9 @@ const CustomFormRegister = () => {
         {({ isValid, dirty, values }) => (
           <Form>
             <Grid
+              width="100%"
               container
-              spacing={2}
+              spacing={1}
               direction={{ xs: "column", md: "row" }}
               justifyContent="space-between"
             >

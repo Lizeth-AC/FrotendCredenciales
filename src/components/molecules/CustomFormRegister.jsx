@@ -126,7 +126,7 @@ const CustomFormRegister = () => {
     }
 
     console.log(formData);
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/registrarPersonal`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/personal`, {
       method: "POST",
       headers: {
         "Accept": "application/json"

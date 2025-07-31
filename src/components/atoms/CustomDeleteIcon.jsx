@@ -3,19 +3,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const CustomDeleteIcon = ({onClick}) => {
   return (
-    <IconButton sx={{backgroundColor: 'red', color: '#FFFFFF',
-      '&:hover': {
-        backgroundColor: 'primary.main',
-      },
+    <IconButton size="small" sx={{color: 'red',
         '&:focus': {
           outline: 'none',
           boxShadow: 'none',
         }
       }}
+      onClick={onClick}
     >
-      <DeleteIcon/>
+      <DeleteIcon />
     </IconButton>
-  )
+  );
 }
 
 export default CustomDeleteIcon;

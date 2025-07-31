@@ -13,6 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -68,14 +75,11 @@ button:focus-visible {
 }
 
 @media print {
-  body {
-    -webkit-print-color-adjust: exact;
-    margin: 0;
-  }
-  .MuiStack-root, .MuiToggleButtonGroup-root, .MuiButton-root {
-    display: none; 
-  }
-  .print-page {
+  .a4-page {
     page-break-after: always;
   }
 }
+
+
+
+
