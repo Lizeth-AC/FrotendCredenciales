@@ -119,7 +119,7 @@ function AccesoComputo() {
     <Grid
       padding={1}
       margin={1}
-      minHeight={'95vh'} // evita bugs con vh en WebView
+      minHeight={'95vh'}
       display="flex"
       flexDirection="column"
       justifyContent="center"
@@ -137,8 +137,6 @@ function AccesoComputo() {
           overflow: 'hidden',
         }}
       >
-
-        {/* Loader sin overlay absoluto */}
         {loading && (
           <Box
           sx={{

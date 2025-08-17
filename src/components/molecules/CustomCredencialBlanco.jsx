@@ -7,21 +7,21 @@ const CustomCredencialBlanco = ({ persona, lado }) => {
 
   return (
     <Box
-      className="credencial"
-      sx={{
-        width: "6cm",
-        height: "9.5cm",
-        position: "relative",
-        backgroundImage: `url(${lado === 'anverso' 
-          ? '/credenciales/CARA_JUEZELECTORAL_EG2025.jpg'
-          : '/credenciales/ATRAS_JUEZELECTORAL_EG2025.jpg'})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        fontSize: "8pt",
-        fontFamily: "Times New Roman, serif",
-        overflow: "hidden"
-      }}
-    >
+  sx={{
+    width: "6cm",
+    height: "9cm",
+    position: "relative",
+    backgroundImage: `url(${lado === 'anverso'
+      ? '/credenciales/CARA_JUEZELECTORAL_EG2025.jpg'
+      : '/credenciales/ATRAS_JUEZELECTORAL_EG2025.jpg'})`,
+    backgroundSize: "100% 100%", 
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    fontSize: "8pt",
+    fontFamily: "Times New Roman, serif",
+    overflow: "hidden",
+  }}
+>
       {lado === 'anverso' && (
         <>
           <Box
@@ -29,7 +29,7 @@ const CustomCredencialBlanco = ({ persona, lado }) => {
               position: "absolute",
               top: 0,
               right: 0,
-              width: "5.2cm",
+              width: "6cm",
               height: "100%",
               display: "flex",
               flexDirection: "column",
@@ -39,13 +39,27 @@ const CustomCredencialBlanco = ({ persona, lado }) => {
               textAlign: "center",
             }}
           >
+           <Typography
+              fontWeight="800"
+              sx={{
+                position: "absolute",
+                bottom: "2.2cm",
+                padding: "0.06cm",
+                lineHeight: 1,
+                fontSize: "9pt",
+                fontFamily: "Source Sans Pro, sans-serif",
+                backgroundColor: "#FFFFFF"
+              }}
+            >
+              {safePersona.cargo_nombre}
+            </Typography>
 
             {/* Nombre */}
             <Typography
               fontWeight="800"
               sx={{
                 position: "absolute",
-                top: "7.2cm",
+                top: "6.85cm",
                 lineHeight: 1,
                 fontSize: "5.7pt",
                 fontFamily: "Source Sans Pro, sans-serif",
@@ -58,7 +72,7 @@ const CustomCredencialBlanco = ({ persona, lado }) => {
             <Typography
               sx={{
                 position: "absolute",
-                top: "7.4cm",
+                top: "7.05cm",
                 fontWeight: 800,
                 fontSize: "6pt",
                 fontFamily: "Source Sans Pro, sans-serif",
@@ -75,7 +89,7 @@ const CustomCredencialBlanco = ({ persona, lado }) => {
               alt="foto"
               style={{
                 position: "absolute",
-                top: "2.32cm",
+                top: "2.13cm",
                 left: "1.5cm",
                 width: "3cm",
                 height: "3cm",
@@ -103,6 +117,26 @@ const CustomCredencialBlanco = ({ persona, lado }) => {
           </Typography>
         </>
       )}
+      {lado === 'reverso' && (
+              <>
+                <Typography
+              fontWeight="800"
+              sx={{
+                position: "absolute",
+                top: "3.22cm",
+                left: "2.9cm",
+                padding: "0.06cm",
+                lineHeight: 1,
+                fontSize: "4.5pt",
+                fontFamily: "Source Sans Pro, sans-serif",
+                backgroundColor: "#FFFFFF"
+              }}
+            >
+              {safePersona.cargo_nombre}
+            </Typography>
+                  
+              </>
+            )}
     </Box>
   );
 };
